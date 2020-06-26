@@ -45,8 +45,8 @@ resource "aws_instance" "web" {
         user        = "ec2-user"
         private_key = "${file("~/.ssh/id_rsa")}"
     }
-    source  =  "./module/configurations/prometheus_configs/prometheus.yml"
-    destination = "/tmp/prometheus.yml"
+    source  =  "./module/configurations/prometheus_configs/prometheus.yaml"
+    destination = "/tmp/prometheus.yaml"
   },
   depends_on = ["aws_instance.web"]
   provisioner   "file" {
