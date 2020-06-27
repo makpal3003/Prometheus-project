@@ -89,7 +89,7 @@ resource "aws_instance" "web" {
         user        = "ec2-user"
         private_key = "${file("~/.ssh/id_rsa")}"
     }
-    source  =  "./module/configurations/grafan_config/grafana.repo"
+    source  =  "./module/configurations/grafana_config/grafana.repo"
     destination = "/tmp/grafana.repo"
   },
   depends_on = ["aws_instance.web"]
